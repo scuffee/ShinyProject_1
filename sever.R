@@ -2,7 +2,7 @@
 
 weightLoss <- function(calorie)
 {
-  x = 0   #daily calorie increment
+  x = 0   #daily calorie increment counter
   prediction = 0   # number of days counter
   while (x < 35000)
       {
