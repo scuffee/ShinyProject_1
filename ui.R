@@ -2,7 +2,7 @@ library(shiny)
 shinyUI(pageWithSidebar(
   headerPanel("Days needed to lose 10 pounds by reducing calories"),
   sidebarPanel(
-    numericInput('calorie', 'Daily calorie reduction', 100, min = 100, max = 1000, step = 100),
+    numericInput('calorie', 'Daily calorie reduction', 100, min = 100, max = 1000, step = 50),
     submitButton('Submit')
     
   ),
