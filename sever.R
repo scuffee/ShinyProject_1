@@ -1,8 +1,8 @@
-# 3500 calories = 1 pound
+# 35000 calories = 10 pound
 
 weightLoss <- function(calorie)
 {
-  x = 0   #daily calorie increment counter
+  x = 0   #calorie reduction accumulator
   prediction = 0   # number of days counter
   while (x < 35000)
       {

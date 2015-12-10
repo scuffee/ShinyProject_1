@@ -8,6 +8,6 @@
 ### the default input value is 100, which can be incremented by 50 up to 
 ### the maximum of 1000.  The prediction variable represents the number of
 ### days required to lose ten pounds based on the calorie input value and
-### epressing the submit button to calculate the number of days.
+### pressing the submit button to calculate the number of days.
 ### The default is set at 100 calorie daily reduction that would require 350
 ### days to lose ten pounds.
