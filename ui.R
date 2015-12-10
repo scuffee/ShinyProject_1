@@ -10,7 +10,7 @@ shinyUI(pageWithSidebar(
     h3('Results of prediction'),
     h4('You entered a  reduction of'),
     verbatimTextOutput("inputValue"),
-    h4('daily calories.'),
+    h4('calories daily.'),
     h4('Which resulted in the predicition of'),
     verbatimTextOutput("prediction"),
     h4('days required.')
