@@ -2,7 +2,7 @@
 ### Course Project: Weight management plan
 ### The ui.R and server.R scripts were created to calculate how long it
 ### would take to lose up to 50 pounds by reducing caloric intake over a number
-### of days.  In this calculator one pound is equal to 3500 calaories.  A 
+### of days.  In this calculator one pound is equal to 3500 calories.  A 
 ### reduction in 3500 calories is a reduction of 1 pound. The input     
 ### variables pounds and calorie represent desired weight loss and daily
 ### calorie reduction. The minimum value for pounds is 5 and calorie is 100.
