@@ -1,4 +1,4 @@
-# ShinyProject_1
+# ShinyProject
 ### Course Project: Weight management plan
 ### The ui.R and server.R scripts were created to calculate how long it
 ### would take to lose up to 50 pounds by reducing caloric intake over a number
