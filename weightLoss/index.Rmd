@@ -1,0 +1,99 @@
+---
+title       : Weight Mnagement Plan
+subtitle    : Course Project 
+author      : Sandra Cuffee
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slide
+---
+
+
+## Summary
+
+### Course Project: Weight Management Plan
+
+#### The ui.R and server.R scripts were created to calculate how long it would take   
+#### to lose up to 50 pounds by reducing caloric intake over a number of days.  In 
+#### this calculator one pound is equal to 3500 calories. A reduction in 3500 
+#### calories is a reduction of one pound.  The input variables pounds and calorie  
+#### represent desired weight loss and daily calorie reduction.  The minimum value 
+#### for pounds is five and calorie is 100. The default input values are 10 pounds 
+#### and 100 for calorie. The default input values are 10 for pounds and 100 for 
+#### calorie. Pounds can be incremented by five, up to the maximum of 50 and  
+#### calorie can be incremented by 50, up to the maximum of 800. The days variable 
+#### represents the number of days required to lose up to 50 pounds based on the 
+#### pound and calorie input values and pressing the submit buttons to calculate 
+#### the number of days. The default values are 10 pounds and 100 calories per day, 
+#### day, would require 350 days to lose 10 pounds. 
+
+---
+
+
+```{r, echo = FALSE,warnings = FALSE}
+
+suppressWarnings(library(shiny))
+shinyUI(pageWithSidebar(
+  headerPanel("Weight Loss Management Plan"),
+  sidebarPanel(
+    numericInput('pounds', 'Number of pounds you would like to lose up to a maximum of 50', 10, min = 5, max = 50, step= 5),
+    submitButton('Submit'),
+    numericInput('calorie', 'Daily calorie reduction up to a maximum of 800', 100, min = 100, max = 800, step = 50),
+    submitButton('Submit')
+    
+  ),
+  mainPanel(
+    h3('Results of the plan'),
+    h4('The number of pounds you want to lose is:'),
+    verbatimTextOutput("inputValue1"),
+    h4('The planned daily calorie reduction is:'),
+    verbatimTextOutput("inputValue2"),
+    h4('Which requires:'),
+    verbatimTextOutput("days"),
+    h4('days.')
+  )
+  
+))
+
+```
+
+
+```{r, echo = FALSE}
+  
+  library(shiny)
+
+  weightLoss <- function(pounds, calorie)
+{
+  x = 0   #Calorie reduction counter
+  days = 0   #Number of days counter
+  totalCalories = pounds * 3500 #Number of calores needed to reduce desired pounds
+  while (x < totalCalories) #Calculating the number of days required
+      {
+          x = x + calorie
+          days = days + 1
+      }
+  
+
+ days #Total number of days
+ 
+  }
+
+shinyServer(
+  function(input,input1, output, output1){
+    output$inputValue1 <- renderPrint({input$pounds})
+    output$inputValue2 <- renderPrint({input$calorie})
+    output$days <- renderPrint({weightLoss(input$pounds,input$calorie)})
+    
+    
+    
+    
+      
+     
+    
+  }
+)
+
+```
